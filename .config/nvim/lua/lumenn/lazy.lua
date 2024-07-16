@@ -35,5 +35,13 @@ require('lazy').setup({
     -- snippets
 	{'L3MON4D3/LuaSnip'},
     {'m4xshen/autoclose.nvim'},
+    {
+        'iamcco/markdown-preview.nvim',
+        cmd = {"MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop"},
+        ft = {"markdown"},
+        build = function() vim.fn["mkdp#util#install"]() end,
+    },
+    {'brenoprata10/nvim-highlight-colors'},
+
 })
 

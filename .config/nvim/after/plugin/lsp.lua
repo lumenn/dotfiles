@@ -22,7 +22,10 @@ cmp.setup({
         { name = 'luasnips' }
     }, {
         { name = 'buffer' },
-    })
+    }),
+    formatting = {
+        format = require('nvim-highlight-colors').format
+    }
 
 })
 
@@ -40,7 +43,8 @@ require('mason-lspconfig').setup({
         'lua_ls',
         'pyright',
         'ansiblels',
-        'jinja_lsp'
+        'jinja_lsp',
+        'taplo'
     }
 
 })
@@ -50,7 +54,7 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { "lua_ls", "html", "terraformls", "tflint", "hyprls", "ansiblels", "jinja_lsp" }
+local servers = { "lua_ls", "html", "terraformls", "tflint", "hyprls", "ansiblels", "jinja_lsp", "taplo" }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
 		capabilities = capabilities,

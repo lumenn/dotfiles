@@ -1,0 +1,95 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+#format = '$all'
+palette = 'horizon'
+format = '''
+[ ](syntax_gray)$all
+'''
+right_format = '''
+$memory_usage
+'''
+
+[memory_usage]
+disabled = false
+
+[git_branch]
+symbol = " "
+style = "syntax_lavender"
+
+[git_status]
+format ="([$all_status$ahead_behind]($style) )"
+conflicted = ""
+ahead = "󰁞"
+behind ="󰁆"
+diverged = "󰹺"
+up_to_date = ""
+untracked = ""
+stashed = "$"
+staged = "󱇬"
+modified = ""
+renamed = "󰁕"
+deleted = "✘"
+style = "syntax_cranberry"
+
+[shell]
+disabled = false
+
+[terraform]
+symbol = "󱁢 "
+style ="syntax_lavender"
+
+[golang]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[character]
+success_symbol = "[](bold ui_positive)"
+error_symbol = "[](bold ui_negative)"
+
+[palettes.horizon]
+syntax_lavender = "#B877DB"
+syntax_cranberry = "#E95678"
+syntax_turquoise = "#25B0BC"
+syntax_apricot = "#F09483"
+syntax_rosebud = "#FAB795"
+syntax_tacao = "#FAC29A"
+syntax_gray = "#BBBBBB"
+
+ui_shadow = "#16161C"
+ui_border = "#1A1C23"
+ui_background = "#1C1E26"
+ui_backgroundAlt = "#232530"
+ui_accent = "#2E303E"
+ui_accentAlt = "#6C6F93"
+ui_secondaryAccent = "#E9436D"
+ui_secondaryAccentAlt = "#E95378"
+ui_tertiaryAccent = "#FAB38E"
+ui_positive = "#09F7A0"
+ui_negative = "#F43E5C"
+ui_warning = "#27D797"
+ui_modified = "#21BFC2"
+ui_lightText = "#D5D8DA"
+ui_darkText = "#06060C"
+
+ansi_normal_blue = "#26BBD9"
+ansi_normal_cyan = "#59E1E3"
+ansi_normal_green = "#29D398"
+ansi_normal_magenta = "#EE64AC"
+ansi_normal_red = "#E95678"
+ansi_normal_yellow = "#FAB795"
+
+ansi_bright_blue = "#3FC4DE"
+ansi_bright_cyan = "#6BE4E6"
+ansi_bright_green = "#3FDAA4"
+ansi_bright_magenta = "#F075B5"
+ansi_bright_red = "#EC6A88"
+ansi_bright_yellow = "#FBC3A7"
+
+alpha_high = "E6"
+alpha_highMed = "B3"
+alpha_med = "80"
+alpha_medLow = "4D"
+alpha_low = "1A"
+alpha_none = "00"
