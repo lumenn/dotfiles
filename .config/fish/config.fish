@@ -8,6 +8,7 @@ alias ssh="kitty +kitten ssh"
 alias vim="nvim"
 alias terraform="tofu"
 alias tf="tofu"
+alias spotify="spt"
 
 export EDITOR=nvim
 
