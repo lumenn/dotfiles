@@ -49,6 +49,8 @@ horizon_theme:
     none: &noneAlpha "00" # #00
 
 theme:
+  analysis_bar: *positiveAlt
+  analysis_bar_text: *gray
   active: *rosebud  # current playing song in list
   banner: *positiveAlt  # the "spotify-tui" banner on launch
   error_border: *negativeAlt #  error dialog border
@@ -68,14 +70,14 @@ behavior:
   seek_milliseconds: 5000
   volume_increment: 10
   # The lower the number the higher the "frames per second". You can decrease this number so that the audio visualisation is smoother but this can be expensive!
-  tick_rate_milliseconds: 250
+  tick_rate_milliseconds: 50
   # Enable text emphasis (typically italic/bold text styling). Disabling this might be important if the terminal config is otherwise restricted and rendering text escapes interferes with the UI.
   enable_text_emphasis: true
   # Controls whether to show a loading indicator in the top right of the UI whenever communicating with Spotify API
   show_loading_indicator: true
   # Disables the responsive layout that makes the search bar smaller on bigger
   # screens and enforces a wide search bar
-  enforce_wide_search_bar: false
+  enforce_wide_search_bar: true
   # Determines the text icon to display next to "liked" Spotify items, such as
   # liked songs and albums, or followed artists. Can be any length string.
   # These icons require a patched nerd font.
