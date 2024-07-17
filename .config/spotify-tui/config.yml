@@ -1,0 +1,120 @@
+horizon_theme:
+  syntax:
+    lavender: &lavender "184, 119, 219" # #B877DB
+    cranberry: &cranberry "233, 86, 120" # #E95678
+    turquoise: &turquoise "37, 176, 188" # #25B0BC
+    apricot: &apricot "240, 148, 131" # #F09483
+    rosebud: &rosebud "250, 183, 149" # #FAB795
+    tacao: &tacao "250, 194, 154" # #FAC29A
+    gray: &gray "187, 187, 187" # #BBBBBB
+  ui:
+    shadow: &shadow "22, 22, 28" # #16161C
+    border: &border "26, 28, 35" # #1A1C23
+    background: &background "28, 30, 38" # #1C1E26
+    backgroundAlt: &backgroundAlt "35, 37, 48" # #232530
+    accent: &accent "46, 48, 62" # #2E303E
+    accentAlt: &accentAlt "108, 111, 147" # #6C6F93
+    secondaryAccent: &secondaryAccent "233, 67, 109" # #E9436D
+    secondaryAccentAlt: &secondaryAccentAlt "233, 83, 120" # #E95378
+    tertiaryAccent: &tertiaryAccent "250, 179, 142" # #FAB38E
+    positive: &positive "9, 247, 160" # #09F7A0
+    positiveAlt: &positiveAlt "39, 215, 150" # #27D796
+    negative: &negative "244, 62, 92" # #F43E5C
+    negativeAlt: &negativeAlt "233, 67, 111" # #E9436F
+    warning: &warning "39, 215, 151" # #27D797
+    modified: &modified "33, 191, 194" # #21BFC2
+    lightText: &lightText "213, 216, 218" # #D5D8DA
+    darkText: &darkText "6, 6, 12" # #06060C
+  ansi:
+    normal:
+      blue: &ansiNormalBlue "38, 187, 217" # #26BBD9
+      cyan: &ansiNormalCyan "89, 225, 227" # #59E1E3
+      green: &ansiNormalGreen "41, 211, 152" # #29D398
+      magenta: &ansiNormalMagenta "238, 100, 172" # #EE64AC
+      red: *cranberry # #E95678
+      yellow: *rosebud # #FAB795
+    bright:
+      blue: &ansiBrightBlue "63, 196, 222" # #3FC4DE
+      cyan: &ansiBrightCyan "107, 228, 230" # #6BE4E6
+      green: &ansiBrightGreen "63, 218, 164" # #3FDAA4
+      magenta: &ansiBrightMagenta "240, 117, 181" # #F075B5
+      red: &ansiBrightRed "236, 106, 136" # #EC6A88
+      yellow: &ansiBrightYellow "251, 195, 167" # #FBC3A7
+  alpha:
+    high: &highAlpha "E6" # #E6
+    highMed: &highMedAlpha "B3" # #B3
+    med: &medAlpha "80" # #80
+    medLow: &medLowAlpha "4D" # #4D
+    low: &lowAlpha "1A" # #1A
+    none: &noneAlpha "00" # #00
+
+theme:
+  active: *rosebud  # current playing song in list
+  banner: *positiveAlt  # the "spotify-tui" banner on launch
+  error_border: *negativeAlt #  error dialog border
+  error_text: *cranberry  # error message text (e.g. "Spotify API reported error 404")
+  hint: *tacao  # hint text in errors
+  hovered: *positive # hovered pane border
+  inactive: *gray # borders of inactive panes
+  playbar_background: *background  # background of progress bar
+  playbar_progress: *positiveAlt # filled-in part of the progress bar
+  playbar_progress_text: *rosebud  # song length and time played/left indicator in the progress bar
+  playbar_text: *rosebud # artist name in player pane
+  selected: *positive # a) selected pane border, b) hovered item in list, & c) track title in player
+  text: *gray # text in panes
+  header: *apricot  # header text in panes (e.g. 'Title', 'Artist', etc.)
+
+behavior:
+  seek_milliseconds: 5000
+  volume_increment: 10
+  # The lower the number the higher the "frames per second". You can decrease this number so that the audio visualisation is smoother but this can be expensive!
+  tick_rate_milliseconds: 250
+  # Enable text emphasis (typically italic/bold text styling). Disabling this might be important if the terminal config is otherwise restricted and rendering text escapes interferes with the UI.
+  enable_text_emphasis: true
+  # Controls whether to show a loading indicator in the top right of the UI whenever communicating with Spotify API
+  show_loading_indicator: true
+  # Disables the responsive layout that makes the search bar smaller on bigger
+  # screens and enforces a wide search bar
+  enforce_wide_search_bar: false
+  # Determines the text icon to display next to "liked" Spotify items, such as
+  # liked songs and albums, or followed artists. Can be any length string.
+  # These icons require a patched nerd font.
+  liked_icon: 
+  shuffle_icon: 
+  repeat_track_icon: 
+  repeat_context_icon: 
+  playing_icon: 
+  paused_icon: 
+  # Sets the window title to "spt - Spotify TUI" via ANSI escape code.
+  set_window_title: true
+
+keybindings:
+  # Key stroke can be used if it only uses two keys:
+  # ctrl-q works,
+  # ctrl-alt-q doesn't.
+  back: "ctrl-q"
+
+  jump_to_album: "a"
+
+  # Shift modifiers use a capital letter (also applies with other modifier keys
+  # like ctrl-A)
+  jump_to_artist_album: "A"
+
+  manage_devices: "d"
+  decrease_volume: "-"
+  increase_volume: "+"
+  toggle_playback: " "
+  seek_backwards: "<"
+  seek_forwards: ">"
+  next_track: "n"
+  previous_track: "p"
+  copy_song_url: "c"
+  copy_album_url: "C"
+  help: "?"
+  shuffle: "ctrl-s"
+  repeat: "r"
+  search: "/"
+  audio_analysis: "v"
+  jump_to_context: "o"
+  basic_view: "B"
+  add_item_to_queue: "z"
