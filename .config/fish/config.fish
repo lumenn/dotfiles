@@ -15,5 +15,5 @@ export EDITOR=nvim
 # KeePassXC<->ssh socket
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# Created by `pipx` on 2024-06-20 15:43:13
 export PATH="$PATH:/home/lumenn/.local/bin"
+export PATH="$PATH:/home/lumenn/.cargo/bin"
