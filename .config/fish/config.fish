@@ -17,3 +17,4 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export PATH="$PATH:/home/lumenn/.local/bin"
 export PATH="$PATH:/home/lumenn/.cargo/bin"
+export PATH="$PATH:/opt/nvim-linux64/bin"
