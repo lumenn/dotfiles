@@ -12,7 +12,8 @@ require'nvim-treesitter.configs'.setup {
       "terraform",
       "python",
       "json",
-      "html"
+      "html",
+      "rust"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

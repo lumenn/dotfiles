@@ -28,3 +28,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+vim.opt.shortmess = vim.opt.shortmess + {c = true}
+vim.api.nvim_set_option('updatetime', 300)
