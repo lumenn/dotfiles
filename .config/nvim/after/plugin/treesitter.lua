@@ -35,7 +35,6 @@ require'nvim-treesitter.configs'.setup {
     select = {
       enable = true,
       lookahead = true,
-      include_surrounding_whitespace = true,
       keymaps = {
         ["ra"] = "@assignment.rhs",
         ["la"] = "@assignment.lhs",
