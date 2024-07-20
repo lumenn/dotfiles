@@ -32,17 +32,25 @@ require'nvim-treesitter.configs'.setup {
     },
   },
   textobjects = {
-      select = {
-        enable = true,
-        lookahead = true,
-        include_surrounding_whitespace = true,
-        keymaps = {
-          ["af"] = "@function.outer",
-          ["if"] = "@function.inner",
-          ["ac"] = "@class.outer",
-          ["ic"] = "@class.inner",
-        }
+    select = {
+      enable = true,
+      lookahead = true,
+      include_surrounding_whitespace = true,
+      keymaps = {
+        ["ra"] = "@assignment.rhs",
+        ["la"] = "@assignment.lhs",
+        ["of"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ol"] = "@loop.outer",
+        ["il"] = "@loop.inner",
+        ["oi"] = "@conditional.outer",
+        ["ii"] = "@conditional.inner",
+        ["oc"] = "@class.outer",
+        ["ic"] = "@class.inner",
+        ["ob"] = "@block.outer",
+        ["ib"] = "@block.inner",
       }
     }
+  },
 }
 
