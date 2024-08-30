@@ -81,6 +81,7 @@ require('lazy').setup({
       bundle_path = vim.fn.stdpath 'data' .. '/mason/packages/powershell-editor-services'
     }
   },
+  -- AI Support
   {
     'jackMort/ChatGPT.nvim',
     event = 'VeryLazy',
@@ -104,6 +105,16 @@ require('lazy').setup({
       'echasnovski/mini.nvim',
       'nvim-tree/nvim-web-devicons'
     }
+  },
+  -- statusline
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons'
+    }
+  },
+  {
+    'voldikss/vim-floaterm'
   }
 
 
