@@ -1,4 +1,6 @@
 local cmp = require('cmp')
+local lspkind = require('lspkind')
+local highlight = require('nvim-highlight-colors')
 
 cmp.setup({
     snippet = {
@@ -33,7 +35,14 @@ cmp.setup({
         { name = 'buffer' },
     }),
     formatting = {
-        format = require('nvim-highlight-colors').format
+        format = function(entry, vim_item)
+            vim_item = lspkind.cmp_format({
+              mode = 'symbol_text',
+              maxwidth = 50,
+              ellipsis_char = '...',
+              show_labelDetails = true
+            })(entry, vim_item)
+            return highlight.format(entry, vim_item)
+          end
     }
-
 })

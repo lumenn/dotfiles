@@ -14,7 +14,8 @@ local servers = {
     'ansiblels',
     'jinja_lsp',
     'taplo',
-    'rust_analyzer'
+    'rust_analyzer',
+    'gopls'
 }
 
 require('mason-lspconfig').setup({
