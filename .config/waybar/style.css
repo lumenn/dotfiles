@@ -1,14 +1,18 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FiraCodeNerdFontPropo, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
+    border-radius: 15;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    color: #ffffff;
+    background-color: transparent;
     transition-property: background-color;
     transition-duration: .5s;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
 }
 
 window#waybar.hidden {
