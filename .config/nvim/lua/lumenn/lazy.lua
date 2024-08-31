@@ -113,9 +113,19 @@ require('lazy').setup({
       'nvim-tree/nvim-web-devicons'
     }
   },
+  -- adds popup in nvim terminal 
   {
     'voldikss/vim-floaterm'
+  },
+  {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify'
+    }
   }
+
 
 
 })
