@@ -19,6 +19,8 @@
       "format": " {usage}%"
     },
     "temperature": {
+      "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
+      "input-filename": "temp2_input",
       "critical-threshold": 90,
       "format": "{icon} {temperatureC}°C",
       "format-icons": ["", "", ""]
