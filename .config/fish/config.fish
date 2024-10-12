@@ -10,6 +10,7 @@ alias terraform="tofu"
 alias tf="tofu"
 alias spotify="spt"
 alias wireshark="sudo termshark"
+alias icat="kitten icat"
 
 export EDITOR=nvim
 
