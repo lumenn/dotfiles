@@ -51,5 +51,29 @@ require'nvim-treesitter.configs'.setup {
       }
     }
   },
+  refactor = {
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "<Leader>nd",
+        list_definitions = "<Leader>ld",
+        -- list_definitions_toc = "gO",
+        -- goto_next_usage = "<a-*>",
+        -- goto_previous_usage = "<a-#>",
+      }
+    },
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = "<Leader>r",
+      },
+    },
+    highlight_current_scope = { enable = true },
+    highlight_definitions = {
+      enable = true,
+      -- Set to false if you have an `updatetime` of ~100.
+      clear_on_cursor_move = true,
+    },
+  }
 }
 
