@@ -4,6 +4,8 @@ end
 
 starship init fish | source
 
+fish_vi_key_bindings
+
 alias ssh="kitty +kitten ssh"
 alias vim="nvim"
 alias terraform="tofu"
