@@ -1,22 +1,23 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position ()
-    "height": 35, // Waybar height (to be removed for auto height)
-    "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    "margin-top": 5,
-    "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/media", "custom/updater", "pulseaudio", "clock", "tray"],
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position ()
+  "height": 35, // Waybar height (to be removed for auto height)
+  "width": 1920, // Waybar width
+  "spacing": 5, // Gaps between modules (4px)
+  "margin-top": 3,
+  "mode": "dock",
+  "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["pulseaudio", "clock", "tray", "group/power"],
     // Choose the order of the modules
     "tray": {
-      "icon-size": 20,
+      "icon-size": 18,
       "spacing": 10
     },
 
     "cpu": {
-      "format": " {usage}%"
+      "format": " {usage}% 󰓅 {avg_frequency}GHz"
     },
     "temperature": {
       "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/",
@@ -26,10 +27,10 @@
       "format-icons": ["", "", ""]
     },
     "memory": {
-      "format": " {}%"
+      "format": " {percentage}%",
+      "tooltip-format": "{used:0.0f}GB / {avail:0.0f}GB"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -38,13 +39,62 @@
         "format-source-muted": "",
         "format-icons": {
           "headphone": "",
-          "hands-free": "",
-          "headset": "",
           "phone": "",
           "portable": "",
           "car": "",
           "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "clock": {
+      "format-alt": "{:%d.%m.%Y %H:%M}",
+      "tooltip-format": "<span size = '10pt' font='FiraCode Nerd Font'>{calendar}</span>",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "left",
+        "on-scroll": 1,
+        "format": {
+          "months":     "<span color='#832161'><b>{}</b></span>",
+          "days":       "<span color='#246e3d'><b>{}</b></span>",
+          "weeks":      "<span color='#3d2645'><b>{}</b></span>",
+          "weekdays":   "<span color='#124829'><b>{}</b></span>",
+          "today":      "<span color='#faa613'><b>{}</b></span>"
+        }
+      }
+    },
+    "group/power": {
+      "orientation": "inherit",
+      "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": true
+      },
+      "modules": [
+        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/quit",
+        "custom/lock",
+        "custom/reboot"
+      ]
+    },
+    "custom/quit": {
+      "format": "󰗼",
+      "tooltip": false,
+      "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+      "format": "󰍁",
+      "tooltip": false,
+      "on-click": "hyprlock"
+    },
+    "custom/reboot": {
+      "format": "󰜉",
+      "tooltip": false,
+      "on-click": "reboot"
+    },
+    "custom/power": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "shutdown now"
     }
 }

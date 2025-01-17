@@ -11,13 +11,14 @@ window {
     location: center;
     width: 600;
     height: 300;
-    border-radius: 0px;
+    border-radius: 10px;
     border-color: transparent;
 }
 
 mainbox {
-        padding: 12px;
-    }
+         padding: 12px;
+         border-radius: 10px;
+}
 
 inputbar {
         background-color: transparent;
@@ -31,13 +32,13 @@ inputbar {
     }
 
 prompt {
-        text-color: cyan;
+        text-color: plum;
     }
 
 entry {
-        placeholder: "Search";
+        placeholder: "...";
         placeholder-color: pink;
-        text-color: white;
+        text-color: pink;
     }
 
 message {
@@ -53,9 +54,8 @@ textbox {
 listview {
         background-color: transparent;
 
-        margin: 12px 0 0;
-        lines: 8;
-        columns: 1;
+        margin: 16px 0 0;
+        columns: 2;
 
         fixed-height: false;
     }
@@ -83,5 +83,5 @@ element-icon {
     }
 
 element-text {
-        text-color: white;
+        text-color: lightgreen;
     }

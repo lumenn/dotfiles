@@ -13,6 +13,7 @@ alias tf="tofu"
 alias spotify="spt"
 alias wireshark="sudo termshark"
 alias icat="kitten icat"
+alias reboot-windows='sudo /usr/sbin/grub-reboot "Windows Boot Manager (on /dev/sdf1)" & sudo reboot now'
 
 export EDITOR=nvim
 
