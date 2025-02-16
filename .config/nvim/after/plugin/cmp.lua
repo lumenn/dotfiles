@@ -1,6 +1,5 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
-local highlight = require('nvim-highlight-colors')
 
 cmp.setup({
     snippet = {
@@ -36,13 +35,30 @@ cmp.setup({
     }),
     formatting = {
         format = function(entry, vim_item)
+            local lspserver_name = "[LSP]"
+
+            if entry.source.name == 'nvim_lsp' then
+              pcall(function()
+                lspserver_name = "[LSP - " .. entry.source.source.client.name .. "]"
+              end)
+            end
+
+            vim_item.menu = ({
+              buffer = "[Buffer]",
+              nvim_lsp = lspserver_name,
+              luasnip = "[LuaSnip]",
+              nvim_lua = "[Lua]",
+              latex_symbols = "[Latex]",
+            })[entry.source.name]
+
             vim_item = lspkind.cmp_format({
               mode = 'symbol_text',
               maxwidth = 50,
               ellipsis_char = '...',
               show_labelDetails = true
             })(entry, vim_item)
-            return highlight.format(entry, vim_item)
+
+            return vim_item
           end
     }
 })

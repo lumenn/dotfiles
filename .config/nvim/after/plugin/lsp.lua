@@ -4,7 +4,6 @@ require('mason').setup({
 
 local servers = {
     'sqls',
-    'tsserver',
     'html',
     'terraformls',
     'tflint',
@@ -15,27 +14,34 @@ local servers = {
     'jinja_lsp',
     'taplo',
     'rust_analyzer',
-    'gopls'
+    'gopls',
+    'ts_ls',
+    'denols'
 }
 
 require('mason-lspconfig').setup({
     ensure_installed = servers
 })
 
+local lspconfig = require("lspconfig")
+
 require("mason-lspconfig").setup_handlers {
-  -- The first entry (without a key) will be the default handler
-  -- and will be called for each installed server that doesn't have
-  -- a dedicated handler.
-  function (server_name) -- default handler (optional)
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-    require("lspconfig")[server_name].setup { capabilities = capabilities }
+  function (server_name)
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    lspconfig[server_name].setup { capabilities = capabilities }
   end,
-  -- Next, you can provide a dedicated handler for specific servers.
-  -- For example, a handler override for the `rust_analyzer`:
-  -- ["rust_analyzer"] = function ()
-  --   require("rust-tools").setup {}
-  -- end
+  denols = function ()
+    lspconfig.denols.setup({
+      root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+      single_file_support = false
+    })
+  end,
+  ts_ls = function()
+    lspconfig.ts_ls.setup({
+      root_dir = lspconfig.util.root_pattern("package.json"),
+      single_file_support = false
+    })
+  end,
 }
 
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
