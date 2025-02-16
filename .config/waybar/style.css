@@ -131,6 +131,16 @@ button:hover {
     color: #2a5c45;
 }
 
+#pulseaudio.source {
+    background-color: #f1c40f;
+    color: #000000;
+}
+
+#pulseaudio.source-muted {
+    background-color: #ff0000;
+    color: #2a5c45;
+}
+
 #temperature {
     background-color: #246e3d;
 }

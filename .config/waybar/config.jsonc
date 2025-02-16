@@ -9,7 +9,7 @@
   "mode": "dock",
   "modules-left": ["hyprland/workspaces", "cpu", "temperature", "memory"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["pulseaudio", "clock", "tray", "group/power"],
+  "modules-right": ["pulseaudio", "pulseaudio#2", "clock", "tray", "group/power"],
     // Choose the order of the modules
     "tray": {
       "icon-size": 18,
@@ -31,12 +31,10 @@
       "tooltip-format": "{used:0.0f}GB / {avail:0.0f}GB"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon} ",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
         "format-icons": {
           "headphone": "",
           "phone": "",
@@ -45,6 +43,15 @@
           "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "pulseaudio#2": {
+        "format": "{format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": " ",
+        "on-click": "amixer -D pulse sset Capture toggle",
+        "on-scroll-up": "amixer sset 'Capture' 2%+",
+        "on-scroll-down": "amixer sset 'Capture' 2%-",
+        "scroll-step": 2
     },
     "clock": {
       "format-alt": "{:%d.%m.%Y %H:%M}",
