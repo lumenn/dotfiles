@@ -1,7 +1,7 @@
 * {
     font-family: FiraCodeNerdFont;
     font-size: 15px;
-    border-radius: 3;
+    border-radius: 18px;
 }
 
 window#waybar {
@@ -12,21 +12,9 @@ window#waybar {
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
+    min-width: 60px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -103,62 +91,39 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+    background-color: transparent;
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    color: #FFFFFF;
+    border-left: 2px solid #64727D;
 }
 
 #memory {
-    background-color: #9b59b6;
-}
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#pulseaudio.source {
-    background-color: #f1c40f;
-    color: #000000;
-}
-
-#pulseaudio.source-muted {
-    background-color: #ff0000;
-    color: #2a5c45;
+    color: #FFFFFF;
+    border-left: 2px solid #64727D;
 }
 
 #temperature {
-    background-color: #246e3d;
+    border-left: 2px solid #64727D;
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    color: #eb4d4b;
+}
+
+#pulseaudio {
+    border-right: 2px solid #64727D;
+}
+
+#pulseaudio.muted {
+    color: #90b1b1;
+}
+
+#pulseaudio.source-muted {
+    color: #eb4d4b;
 }
 
 #tray {
-    background-color: #2980b9;
+    border-right: 2px solid #64727D;
 }
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
