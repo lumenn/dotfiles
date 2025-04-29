@@ -16,6 +16,10 @@ return {
               {
                   "<leader>f",
                   group = "Find",
+              },
+              {
+                  "<leader>c",
+                  group = "Code Actions",
               }
           }
       }
@@ -47,6 +51,34 @@ return {
           "<leader>ee",
           "<cmd>Explore<cr>",
           desc = "File explorer"
+      },
+      {
+          "<leader>ca",
+            function()
+                vim.cmd.RustLsp('codeAction')
+            end,
+          desc = "Code Action"
+      },
+      {
+          "<leader>cd",
+            function()
+                vim.cmd.RustLsp({ 'renderDiagnostic', 'current'})
+            end,
+          desc = "Code Diagnostics"
+      },
+      {
+          "<leader>ce",
+            function()
+                vim.cmd.RustLsp({ 'explainError', 'current'})
+            end,
+          desc = "Code Explain Error"
+      },
+      {
+          "K",
+            function()
+                vim.cmd.RustLsp({'hover', 'actions'})
+            end,
+          desc = "Hover"
       }
   },
 }
