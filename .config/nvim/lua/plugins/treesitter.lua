@@ -27,6 +27,7 @@ return {
                 "lua",
                 "rust",
                 "query",
+                "dockerfile"
             },
             incremental_selection = {
                 enable = true,
@@ -43,7 +44,7 @@ return {
         end,
     },
     {
-        'nvim-treesitter/nvim-treesitter-refactor',
+        "nvim-treesitter/nvim-treesitter-refactor",
         opts = {
             refactor = {
                 highlight_definitions = {
@@ -76,7 +77,7 @@ return {
         end,
     },
     {
-        'nvim-treesitter/nvim-treesitter-textobjects',
+        "nvim-treesitter/nvim-treesitter-textobjects",
         opts = {
             textobjects = {
                 select = {
@@ -104,7 +105,7 @@ return {
         end,
     },
     {
-        'nvim-treesitter/nvim-treesitter-context',
+        "nvim-treesitter/nvim-treesitter-context",
         opts = {
 
         },
@@ -113,21 +114,22 @@ return {
         end,
     },
     {
-        'folke/twilight.nvim',
+        "folke/twilight.nvim",
         opts = {
             dimming = {
-                alpha = 0.1,
+                alpha = 0.25,
                 color = { "Normal", "#ffffff" },
                 term_bg = "#000000",
                 inactive = false,
             },
-            context = 10,
+            context = 30,
             treesitter = true,
             expand = {
                 "function",
                 "method",
                 "table",
                 "if_statement",
+                "block",
             },
             exclude = {},
         },
@@ -140,7 +142,7 @@ return {
         end,
     },
     {
-        'windwp/nvim-ts-autotag',
+        "windwp/nvim-ts-autotag",
         opts = {
             enable_close = true,
             enable_rename = true,
