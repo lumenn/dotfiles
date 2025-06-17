@@ -15,7 +15,15 @@ return {
 		"rust_analyzer",
 		"dockerls",
 		"hadolint",
-		"docker_compose_language_service"
+		"docker_compose_language_service",
+		-- Golang
+		"gopls",
+		"goimports",
+		"gofumpt",
+		"gomodifytags",
+		"impl",
+		"delve",
+		"nvim-dap-go"
 	    }
 	},
     },

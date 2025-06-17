@@ -27,7 +27,11 @@ return {
                 "lua",
                 "rust",
                 "query",
-                "dockerfile"
+                "dockerfile",
+                "go",
+                "gomod",
+                "gowork",
+                "gosum"
             },
             incremental_selection = {
                 enable = true,

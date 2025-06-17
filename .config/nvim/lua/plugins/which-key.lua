@@ -1,3 +1,5 @@
+local builtin = require('telescope.builtin')
+
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
@@ -51,6 +53,20 @@ return {
           "<leader>ee",
           "<cmd>Explore<cr>",
           desc = "File explorer"
+      },
+      {
+          "<leader>ff",
+            function ()
+                builtin.find_files()
+            end,
+          desc = "Telescope find files"
+      },
+      {
+          "<leader>fg",
+            function ()
+               builtin.live_grep()
+            end,
+          desc = "Telescope live grep"
       },
       {
           "<leader>ca",
