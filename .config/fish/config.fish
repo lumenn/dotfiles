@@ -13,8 +13,7 @@ alias tf="tofu"
 alias spotify="spt"
 alias wireshark="sudo termshark"
 alias icat="kitten icat"
-alias reboot-windows='sudo /usr/sbin/grub-reboot "Windows Boot Manager (on /dev/sdf1)" & shutdown -r now'
-
+alias reboot-windows='sudo /usr/sbin/grub-reboot 2; shutdown now -r'
 export EDITOR=nvim
 
 # KeePassXC<->ssh socket

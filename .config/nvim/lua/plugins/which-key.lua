@@ -20,6 +20,10 @@ return {
                   group = "Find",
               },
               {
+                  "<leader>ft",
+                  group = "FloatTerm",
+              },
+              {
                   "<leader>c",
                   group = "Code Actions",
               }
@@ -95,6 +99,11 @@ return {
                 vim.cmd.RustLsp({'hover', 'actions'})
             end,
           desc = "Hover"
+      },
+      {
+          "<leader>ftg",
+          "<cmd>FloatermNew --height=0.9 --width=0.9 lazygit<cr>",
+          desc = "LazyGit"
       }
   },
 }
