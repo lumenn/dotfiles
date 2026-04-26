@@ -2,7 +2,12 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+if not pidof start-hyprland >/dev/null
+	start-hyprland
+end 
+
 starship init fish | source
+pyenv init - fish | source
 
 fish_vi_key_bindings
 
@@ -17,7 +22,8 @@ alias reboot-windows='sudo /usr/sbin/grub-reboot 2; shutdown now -r'
 export EDITOR=nvim
 
 # KeePassXC<->ssh socket
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+eval (ssh-agent -c) > /dev/null
+set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export PATH="$PATH:/home/lumenn/.local/bin"
 export PATH="$PATH:/home/lumenn/.cargo/bin"
